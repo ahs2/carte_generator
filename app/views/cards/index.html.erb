@@ -18,11 +18,14 @@
               <td class='p-1 text-center border bg-gray-100'><%= index + 1 %></td>
               <td class="p-1 whitespace-nowrap border"><%= card.firstname %></td>
               <td class="p-1 whitespace-nowrap border"><%= card.lastname %></td>
-              <td class="p-1 whitespace-nowrap border"><%= card.link %></td>
+              <td class="p-1 whitespace-nowrap border text-indigo-700"><%= card.link %></td>
               <td class="p-1 border flex items-center justify-center">
-                <%= link_to  card_path(card, format: :pdf), target: "_blank" do %>
-                  <%= image_tag "print.gif", width: 40 %>
-                <% end %>
+                <div class='flex gap-2 items-center'>
+                  <%= link_to  card_path(card, format: :pdf), target: "_blank" do %>
+                    <%= image_tag "print.gif", width: 40 %>
+                  <% end %>
+                  <%= button_to 'x', card_path(card), method: :delete, class: "text-sm bg-red-500 text-red-100 py-1 px-2 rounded shadow" %>
+                </div>
               </td>
             </tr>
           <% end %>
