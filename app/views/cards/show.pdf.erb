@@ -1,0 +1,75 @@
+<section style="padding: 15px 0; display: flex; justify-content: space-between;">
+  <div style="flex: grow; width: 48%; padding: 0 15px; display: inline-block; position: relative">
+    <section style='display: flex; justify-content: space-between; align-items: center'>
+      <span style='font-size: 18px; font-weight: bold'>GUIDE PAIEMENT PRIME ASSURANCE</span>
+      <span style='font-size: 18px; font-weight: bold; margin: 10px 0'><%= image_tag wicked_pdf_asset_base64("ipay.png"), width: 40 %></span>
+    </section>
+
+    <section style='text-align: center'>
+      <span style='font-size: 16px; font-weight: 800'><%= @card.firstname %> <%= @card.lastname %></span>
+    </section>
+    <br>
+    <section style='text-align: center; margin: -22px 0'>
+      <%= image_tag wicked_pdf_asset_base64("sunu.png"), width: 180 %>
+    </section>
+    <br>
+    <section style='text-align: center; margin: 12px 0'>
+      <span style='font-size: 14px; font-weight: bold'>CODE DE PAIEMENT en agence Alizza ou BOA</span>
+      <br>
+      <span style='font-size: 23px; font-weight: bold'><%= extract_from_url(@card.link) %></span>
+    </section>
+    
+    <section style='text-align: center'>
+      <div>Ou</div>
+      <div style='font-size: 14px; font-weight: bold'>Scannez pour payer avec téléphone</div>
+    </section>
+    <br>
+    <section style='text-align: center'>
+      <%= qr_code_as_svg(@card.link) %>
+    </section>
+
+    <section style='text-align: center; margin-top: 12px'>
+      <div style='font-size: 17px; font-weight: 800; color: #07049b'><%= @card.link %></div>
+      <div style='font-size: 15px; font-weight: 800; margin: 10px 0'>PAYEZ PAR :</div>
+    </section>
+
+    <section style='text-align: center'>
+      <%= image_tag wicked_pdf_asset_base64("part.png"), width: 380 %>
+    </section>
+
+    <section style='text-align: center'>
+      <div style='font-size: 17px; font-weight: 800'>Service Client</div>
+      <div style='font-size: 15px; margin: 10px 0'>(+227) 87 50 50 50 /  (+227) 20 73 41 75</div>
+    </section>
+    
+  </div>
+  
+  <div style="width: 47%; padding: 0 25px; display: inline-block;">
+    <section style='display: flex; justify-content: space-between; align-items: center'>
+        <span style='font-size: 24px; font-weight: bold'>GUIDE PAIEMENT PRIME ASSURANCE</span>
+        <span><%= image_tag wicked_pdf_asset_base64("ipay.png"), width: 40 %></span>
+    </section>
+
+    <section style='margin: 15px 0'>
+      <h3>Mode 1:</h3>
+      <p style='text-align: justify;'>Utilisez le code de paiement et dirigez-vous vers l'une des agences Alizza ou BOA Niger pour procéder au règlement de votre prime d'assurance</p>
+    </section>
+
+    <section style='margin: 15px 0'>
+      <h3>Mode 2:</h3>
+      <p style='text-align: justify;'>Scannez le code QR avec l’appareil photo de votre téléphone et effectuez le paiement de votre prime d'assurance en utilisant VISA & MasterCard, MyBOA et le Mobile Money (Airtel Money et Moov Money).
+      </p>
+    </section>
+
+    <section style='margin: 15px 0'>
+      <h3>Mode 3:</h3>
+      <p style='text-align: justify;'>Effectuez le règlement de votre prime d'assurance en utilisant votre carte bancaire, que ce soit une carte VISA ou MasterCard.
+    </p>
+    </section>
+
+    <section style='text-align: center'>
+      <h3>Service Client</h3>
+      <p>(+227) 87 50 50 50 /  (+227) 20 73 41 75</p>
+    </section>
+  </div>
+</section>

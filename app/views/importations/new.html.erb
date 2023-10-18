@@ -1,0 +1,36 @@
+<div class="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
+  
+  <!-- Login component -->
+  <div class="flex shadow-md">
+    <!-- Login form -->
+    <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white relative" style="width: 26rem; height: 32rem;">
+      <div class="w-[21rem]">
+        <!-- Heading -->
+        <h1 class="text-2xl font-semibold mb-5 text-cyan-700 uppercase">Badge Generator</h1>
+
+        <!-- Form -->
+        <%= form_with(model: @importation, url: importations_path, local: true, html: { multipart: true }) do |form| %>
+          <div class="mb-6">
+            <%= form.label :file, 'Sélectionnez un fichier Excel', class: "block text-gray-700 text-sm font-bold mb-2 hidden" %>
+            <%= form.file_field :file, accept: '.xlsx', class: "border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-min" %>
+          </div>
+
+          <div class="mb-6">
+            <%= form.submit 'Importer', class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+          </div>
+        <% end %>
+
+        <div>
+          <%= button_to "Purger", destroy_all_importations_path, method: :delete, data: { confirm: "Êtes-vous sûr ? Cette action supprimera toutes les données d'importation." }, class: "fixed bottom-40 bg-pink-700 py-2 px-3 text-pink-50 rounded shadow" %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login banner -->
+    <div class="flex flex-wrap content-center justify-center rounded-r-md" style="width: 26rem; height: 32rem;">
+      <%= link_to cards_path, class:'h-full' do %>
+        <%= image_tag "fond.jpg", class: "w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md" %>
+      <% end %>
+    </div>
+  </div>
+</div>
