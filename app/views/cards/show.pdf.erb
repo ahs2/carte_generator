@@ -6,17 +6,20 @@
     </section>
 
     <section style='text-align: center'>
-      <span style='font-size: 18px; font-weight: 800'><%= @card.firstname %> <%= @card.lastname %></span>
+      <span style='font-size: 18px; font-weight: 600; text-transform: uppercase;'><%= @card.fullname %></span>
     </section>
     <br>
     <section style='text-align: center; margin: -22px 0'>
-      <%= image_tag wicked_pdf_asset_base64("sunu.png"), width: 180 %>
+      <%= image_tag wicked_pdf_asset_base64("logo.png"), width: 180 %>
     </section>
     <br>
     <section style='text-align: center; margin: 12px 0'>
       <span style='font-size: 17px;'>CODE DE PAIEMENT en agence Alizza ou BOA</span>
       <br>
-      <span style='font-size: 23px; font-weight: bold'><%= extract_from_url(@card.link) %></span>
+      <span style='font-size: 23px; font-weight: bold'>
+        <%# <%= @card.code %> 
+        <%= extract_numbers_from_url(@card.link) %>
+      </span>
     </section>
     
     <section style='text-align: center'>

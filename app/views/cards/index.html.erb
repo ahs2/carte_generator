@@ -6,9 +6,9 @@
         <thead class='bg-indigo-600 text-white'>
           <tr>
             <th class='p-1'>#</th>
+            <th class="p-1 text-left border">Code</th>
             <th class="p-1 text-left border">Nom</th>
-            <th class="p-1 text-left border">Prénom</th>
-            <th class="p-1 text-left border">liens</th>
+            <th class="p-1 text-left border">Liens</th>
             <th class="p-1 text-center border">#</th>
           </tr>
         </thead>
@@ -16,8 +16,8 @@
           <% @cards.each_with_index do |card, index| %>
             <tr>
               <td class='p-1 text-center border bg-gray-100'><%= index + 1 %></td>
-              <td class="p-1 whitespace-nowrap border"><%= card.firstname %></td>
-              <td class="p-1 whitespace-nowrap border"><%= card.lastname %></td>
+              <td class="p-1 whitespace-nowrap border"><%= card.code %></td>
+              <td class="p-1 whitespace-nowrap border"><%= card.fullname %></td>
               <td class="p-1 whitespace-nowrap border text-indigo-700"><%= card.link %></td>
               <td class="p-1 border flex items-center justify-center">
                 <div class='flex gap-2 items-center'>

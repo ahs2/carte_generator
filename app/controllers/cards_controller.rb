@@ -12,7 +12,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "badge #{@card.firstname} #{@card.lastname}",
+        render pdf: "badge #{@card.fullname}",
               orientation: "Portrait",
               page_size: 'A4',
               layout: 'pdf',

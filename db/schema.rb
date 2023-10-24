@@ -43,8 +43,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_16_152946) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname"
+    t.string "fullname"
+    t.string "code"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

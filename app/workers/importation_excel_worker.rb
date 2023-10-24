@@ -21,14 +21,14 @@ class ImportationExcelWorker
     xlsx.each_with_pagename do |name, sheet|
       sheet.each_with_index do |hash, index|
         if index != 0
-          firstname = hash[0]
-          lastname = hash[1]
-          link = hash[2]
+          fullname = hash[0]
+          link = hash[1]
+          # code = hash[2]
 
           card_archives << {
-            firstname: firstname,
-            lastname: lastname,
+            fullname: fullname,
             link: link,
+            # code: code,
             created_at: current_time,
             updated_at: current_time
           }

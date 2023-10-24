@@ -26,4 +26,15 @@ module ApplicationHelper
     File.basename(link)
   end
 
+  def extract_numbers_from_url(link)
+  match = link.match(/https:\/\/i-pay.money\/subscriber_payment_desks\/(\d+)/)
+  if match
+    numbers = match.captures[0]
+    return numbers.to_i
+  else
+    return nil
+  end
+end
+
+
 end
